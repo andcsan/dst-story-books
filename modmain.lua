@@ -3,7 +3,7 @@ PrefabFiles = {
 }
 
 AddPrefabPostInitAny(function (inst)
-	if inst:HasTag("player") then
+	if inst:HasTag("player") and inst:HasTag("reader") then
 		inst:AddComponent("storybookreader")
 	end
 end)
