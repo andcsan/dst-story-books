@@ -5,8 +5,8 @@ local StoryBook = Class(function(self, inst)
 	self.inst:AddTag("storybook")
 end)
 
-function StoryBook:SetStory(story)
-	self.story = story
+function StoryBook:SetSections(sections)
+	self.sections = sections
 end
 
 function StoryBook:SetOnReadFn(onreadfn)
