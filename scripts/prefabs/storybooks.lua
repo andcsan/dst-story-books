@@ -35,6 +35,7 @@ local function MakeStoryBook(name, book_def)
         inst:AddComponent("inspectable")
 
         inst:AddComponent("storybook")
+        inst.components.storybook:SetTitle(book_def.title)
         inst.components.storybook:SetSections(book_def.sections)
         inst.components.storybook:SetOnReadFn(book_def.onreadfn)
         inst.components.storybook:SetOnDoneFn(book_def.ondonefn)

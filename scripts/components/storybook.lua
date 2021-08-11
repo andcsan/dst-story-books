@@ -5,6 +5,10 @@ local StoryBook = Class(function(self, inst)
 	self.inst:AddTag("storybook")
 end)
 
+function StoryBook:SetTitle(title)
+	self.title = title
+end
+
 function StoryBook:SetSections(sections)
 	self.sections = sections
 end

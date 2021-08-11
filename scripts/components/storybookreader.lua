@@ -31,6 +31,7 @@ end
 
 function StoryBookReader:Read(book)
 	if book ~= nil and book.components.storybook ~= nil then
+		local title = book.components.storybook.title
 		local sections = book.components.storybook.sections
 
 		if sections == nil or type(sections) ~= "table" then
@@ -41,9 +42,13 @@ function StoryBookReader:Read(book)
 
 		book.components.storybook:OnRead(self.inst)
 
-		local section = sections[math.random(#sections)]
-
 		local lines = {}
+
+		if title ~= nil and type(title) == "string" then
+			table.insert(lines, { message = title, noanim = true, duration = 3.0 })
+		end
+
+		local section = sections[math.random(#sections)]
 
 		for i, v in ipairs(section.lines) do
 			table.insert(lines, { message = v.line, noanim = true, duration = tonumber(v.duration) })
